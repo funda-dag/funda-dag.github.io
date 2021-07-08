@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Lesson: Angular</title>
+        <meta href="style.css" rel="stylesheet" type="text/css">
+        <style>
+            * {
+                margin: 10px;
+            }
+            ul {
+                font-size: 16px;
+            }
+
+
+            .beispiel {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Stichpunkte und Notizen zu Angular!</h1>
+        <div>
+            <h3>Komponente einbinden:</h3>
+            <div>
+                <ul class="punkt">Komponenten können in Komponenten eingebunden werden:
+                    <li>app.component.ts : </li>
+                    <br>
+            
+                    <div class="beispiel">
+                        @Component({ <br>
+                        selector: 'app-select-field', <br>
+                        templateUrl: './select-field.component.html', <br>
+                        styleUrls: ['./select-field.component.scss'], <br>
+                        }) 
+                    <br>
+                    <br> 
+                    </div>   
+                    <div> 
+                       <li>Selector aus ts in html einbinden</li>   
+                        <div class="beispiel">
+                        app-select-field [values]="residenceStatusValues" [fieldControl]="get('firstResidenceStatus')!"></app-select-field>    
+                        </div> 
+                    </div>
+                </ul>
+            </div>
+            <div>
+                <ul> Komponente erstellen wenn:
+                    <li>etwas öfters vorkommt</li>
+                    <li>viel Logik beinhaltet</li>
+                </ul>
+            </div>
+            <h3>Kommunikation zwischen Komponenten</h3> 
+            <div>
+                <ul>Kommunikation zwischen Komponenten
+                    <li>Input(): Eingabe
+                        <div>Der Komponente wird ein Wert von der Elternkomponente gegeben</div>
+                    </li> <br>
+                    <li>Output(): Rückgabe
+                        <div>Der Wert in der Komponente wird an die Elternkomponente zurückgegeben</div>
+                    </li><br>
+                    <li>emit
+                        <div>Elternkomponente etwas zurück geben</div>
+                    </li><br>
+                </ul>
+            </div>
+            <div>
+                <ul>Komponenten haben einen Lebenszyklus 
+                    <li>ngOnInit</li>
+                        <div>wird jedesmal aufgerufen wenn Komponente erstellt wird</div>
+                        <div>hier ist nichts zu sehen</div>
+                    <li>ngAfterViewInit</li>
+                        <div>wird aufgerufen wenn HTML fertig ist</div>
+                        <div>Nutzer sieht die Benutzeroberfläche</div>
+                    <li>ngOnDestroy</li>
+                        <div>wird aufgerufen wenn Komponente stirbt (z.B. Seitenwechsel)</div>
+                        <div>Sinnvoll in Formularen: Verlassen vom Formular -> Beobachtung beenden</div>
+                </ul>
+            </div>
+            <br>
+            <div>
+                <ul>Bindings
+                    <li>[ ]</li>
+                        <div>Übergabe</div>
+                        <div>Wert von EK wird an KK übergeben</div>
+                        <div>EK bekommt Änderungen nicht mit</div>
+                        <br>
+                        <br>
+                    <li>( )</li>
+                        <div>Empfang</div>
+                        <div>übergibt nichts</div>
+                        <div>empfängt etwas</div>
+                        <br>
+                        <br>
+                    <li>[( )]</li>
+                        <div>empfangen und zurückgeben</div>
+                        <br>
+                        <br> 
+                    <li>{{ }}</li>
+                        <div>String ausgeben</div>
+                        <div>Wert an HTML übergeben und anzeigen</div>
+                        <div style="color: green">Text ausgeben</div>
+                        <div style="color: red">Komponente etwas übergeben</div>
+                </ul>
+                <br>
+                <br>
+            </div>
+            <div>
+                <ul>Directives
+                    <li>*ngFor</li>
+                        <div>alle Elemente eines Arrays durchlaufen</div>
+                    <li>*ngIf</li>
+                        <div>Wenn true: dieses Element existiert in HTML</div>
+                        <div>Wenn false: dieses Element existiert nicht!</div>
+                        <br>
+                        <div>true -> false: <br>
+                            Komponente wird zerstört! <br>
+                            (Nicht mehr in HTML drin)
+                        </div>
+                        <div>false -> true: <br>
+                            Komponente wird erstellt! <br>
+                            (ngOnInit, ngAfterViewInit, ngOnDestray wird aufgerufen)</div>
+                </ul>
+                <br>
+                <br>
+            </div>
+            <div>
+                <ul>Vergleich <strong>'Display:none'</strong> und <strong>'ngIf'</strong>
+                    <li>Display:none;</li>
+                        <div>Element noch da, ABER keine Anzeige</div>
+                    <li>ngIf</li>
+                        <div>Element komplett WEG!</div>
+                </ul>
+            </div>
+            <div>Platzhalter für Methoden-Ausgaben:</div>
+            <div> $event </div>
+        </div>
+    </body>
+</html>
+</html>
